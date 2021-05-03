@@ -1,0 +1,63 @@
+<html>
+
+<style>
+
+body{
+	background-color: #001c8b;
+}
+
+table{
+	background-color: #0072e3;
+}
+
+h1{
+	color: #ffc76f;
+}
+
+</style>
+
+<script>
+
+	function somethingWentWrong(){
+	
+		if(1 > 0){
+			document.querySelector('#somethingWentWrong').innerText = "Not finished";
+			return(false);
+		}
+	
+	}
+
+</script>
+
+<body>
+	<form action="DeletePost.php" method="post" onsubmit="return hasSubmitted()">
+		<table>
+			<tr>
+				<td>
+				Post
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Author
+				</td>
+			</tr>
+			<tr>
+				<td>
+				Delete
+				</td>
+			</tr>
+			<?php 
+			
+				$mysqli = new mysqli("mysql.eecs.ku.edu", "brandonharrell", "", "brandonharrell");
+			
+			?>
+		</table>
+	</form>
+	
+	<h1 id = "somethingWentWrong">
+	</h1>
+
+</body>
+
+</html>
