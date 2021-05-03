@@ -1,0 +1,50 @@
+<html>
+
+<style>
+
+body{
+	background-color: #001c8b;
+}
+
+h1{
+	color: #ffc76f;
+}
+
+label{
+	color: #ffc76f;
+}
+
+</style>
+
+<script>
+
+	function hasSubmitted(){
+		let username = document.querySelector('#userID').value;
+		let inPost = document.querySelector('#post').value;
+		if(username.length == 0){
+			document.querySelector('#somethingWentWrong').innerText = "Username must have at least 1 value";
+			return(false);
+		}
+		if(inPost.length == 0){
+			document.querySelector('#somethingWentWrong').innerText = "Post must have some content";
+			return(false);
+		}
+}
+
+</script>
+
+<body>
+
+	<form action="CreatePosts.php" onsubmit = "return hasSubmitted()" method = "post">
+		<label for "userId">Username:</label>
+		<input type="text" name = "userID" id="userID"><br>
+		<label for = "post">Post: &nbsp; &nbsp; &nbsp; &nbsp;</label>
+		<input type="text" name="post" id="post"><br>
+		<input type="submit" id = "submitButton" style="color: #3be1ff">
+	</form>
+	<h1 id = "somethingWentWrong"></h1>
+		
+</body>
+
+
+</html>

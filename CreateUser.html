@@ -1,0 +1,46 @@
+<html>
+
+<style>
+
+body{
+	background-color: #001c8b;
+}
+
+label{
+	color: #ffc76f;
+}
+
+h1{
+
+	font-size: 36px;
+	text-align: center;
+	color: #ffc76f;
+}
+
+</style>
+
+<script>
+
+	function hasSubmitted(){
+	let username = document.querySelector('#username').value;
+	if(username.length == 0){
+
+		document.querySelector('h1').innerText = "Username must contain at least 1 character";
+		return(false);	
+		}	
+	}
+
+
+</script>
+
+
+<body>
+	<form action = "CreateUser.php" onsubmit = "return hasSubmitted()" method = "post">
+	<label for = "username" >Username</label>
+	<input type = "text" name = "username" id = "username">
+	<input type = "submit" id = "submitbutton" style="color: #ffab82">
+	</form>
+	<h1 id = "somethingWentWrong"></h1>
+</body>
+
+</html>
